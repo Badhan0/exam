@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form signup">
+            <h2>Sign Up</h2>
+            <div class="inputbox">
+                <input type="text" required="required">
+                <i class="fa-regular fa-user"></i>
+                <span>Username</span>
+            </div>
+            <div class="inputbox">
+                <input type="text" required="required">
+                <i class="fa-regular fa-envelope"></i>
+                <span>E-mail/Phone No.</span>
+            </div>
+            <div class="inputbox">
+                <input type="password" required="required">
+                <i class="fa-solid fa-lock"></i>
+                <span>Create Password</span>
+            </div>
+            <div class="inputbox">
+                <input type="password" required="required">
+                <i class="fa-solid fa-lock"></i>
+                <span>Conform Password</span>
+            </div>
+            <div class="inputbox">
+                <input type="submit" value="Create Account">
+            </div>
+            <p>Already a member ? <a href="#" class="login">Log in</a></p>
+        </div>
+
+        <div class="form signin">
+            <h2>Sign In</h2>
+            <div class="inputbox">
+                <input type="text" required="required">
+                <i class="fa-regular fa-user"></i>
+                <span>Username</span>
+            </div>
+            <div class="inputbox">
+                <input type="password" required="required">
+                <i class="fa-regular fa-lock"></i>
+                <span>Password</span>
+            </div>
+            <div class="inputbox">
+                <input type="submit" value="Log In">
+            </div>
+            <p>Not Registered ? <a href="#" class="create">Create an account</a></p>
+        </div>
+        </div>
+
+    </div>
+
+    <script>
+        let login = document.querySelector('.login');
+        let create = document.querySelector('.create');
+        let container = document.querySelector('.container');
+
+        login.onclick = function(){
+            container.classList.add('signinForm');
+        }
+        create.onclick = function(){
+            container.classList.remove('signinForm');
+        }
+    </script>
+</body>
+</html>

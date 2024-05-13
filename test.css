@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+  }
+  body {
+    min-height: 100vh;
+    background: #223243;
+  }
+  .logo {
+    height: 8em;
+    top: 16px;
+    left: 16px;
+  }
+  .name {
+    font-family: "Monoton", cursive;
+    font-size: 4em;
+    display: contents;
+    top: 58px;
+    left: 150px;
+    color: yellow;
+  }
+  .container {
+    width: fit-content;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 5%;
+    border: 8px solid #223243;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+      5px 5px 15px rgba(0, 0, 0, 0.35),
+      inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+      inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+  }
+  .header {
+    display: flex;
+    align-items: flex-end;
+  }
+  .container .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .container .form.signin,
+  .container.signinForm .form.signup {
+    display: none;
+  }
+  .container.signinForm .form.signin {
+    display: flex;
+  }
+  .container .form h2 {
+    font-family: "Rampart One", cursive;
+    font-size: 3.2em;
+    color: yellow;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
