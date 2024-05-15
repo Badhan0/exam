@@ -1,30 +1,53 @@
 #include <iostream>
-using namespace std;
-int binarySearch(int arr[], int N, int X)
-{
-    int start = 0;
-    int end = N;
+using namespace std; 
+#define NA -1 
+void moveToEnd(int mPlusN[], int size) 
+{ 
+int j = size - 1; 
+for (int i = size - 1; i >= 0; i--) 
+	if (mPlusN[i] != NA) 
+	{ 
+		mPlusN[j] = mPlusN[i]; 
+		j--; 
+	} 
+} 
+void merge(int mPlusN[], int N[], int m, int n) 
+{ 
+int i = n;
+int j = 0; 
+int k = 0; 
+while (k < (m + n)) 
+{ 
+	if ((j == n)||(i > (m + n) && mPlusN[i] <= N[j])) 
+	{ 
+		mPlusN[k] = mPlusN[i]; 
+		k++; 
+		i++; 
+	} 
+	else
+	{ 
+	mPlusN[k] = N[j]; 
+	k++; 
+	j++; 
+	} 
+} 
+} 
+void printArray(int arr[], int size) 
+{ 
+for (int i = 0; i < size; i++) 
+cout << arr[i] << " "; 
 
-    while (start <= end) {
-        int mid = start
-                  + (end - start) / 2;
-        if (X == arr[mid]) {
-            return mid;
-        }
-        else if (X < arr[mid]) {
-            start = mid + 1;
-        }
-        else {
-            end = mid - 1;
-        }
-    }
-    return -1;
-}
-int main()
-{
-    int arr[] = { 5, 4, 3, 2, 1 };
-    int N = sizeof(arr) / sizeof(arr[0]);
-    int X = 1;
-    cout << binarySearch(arr, N, X);
-    return 0;
-}
+cout << endl; 
+} 
+int main() 
+{ 
+int mPlusN[] = {2, 8, NA, NA, NA, 13, NA, 15, 20}; 
+int N[] = {25, 9, 7, 5}; 
+int n = sizeof(N) / sizeof(N[0]); 
+int m = sizeof(mPlusN) / sizeof(mPlusN[0]) - n; 
+moveToEnd(mPlusN, m + n); 
+merge(mPlusN, N, m, n); 
+printArray(mPlusN, m+n); 
+
+return 0; 
+} 
