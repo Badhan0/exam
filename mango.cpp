@@ -18,7 +18,7 @@ int j = 0;
 int k = 0; 
 while (k < (m + n)) 
 { 
-	if ((j == n)||(i < (m + n) && mPlusN[i] <= N[j])) 
+	if ((j == n)||(i > (m + n) && mPlusN[i] <= N[j])) 
 	{ 
 		mPlusN[k] = mPlusN[i]; 
 		k++; 
@@ -42,7 +42,7 @@ cout << endl;
 int main() 
 { 
 int mPlusN[] = {2, 8, NA, NA, NA, 13, NA, 15, 20}; 
-int N[] = {5, 7, 9, 25}; 
+int N[] = {25, 9, 7, 5}; 
 int n = sizeof(N) / sizeof(N[0]); 
 int m = sizeof(mPlusN) / sizeof(mPlusN[0]) - n; 
 moveToEnd(mPlusN, m + n); 
